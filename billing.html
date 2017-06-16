@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shiv | Dashboard</title>
+    <title>Shiv Medical</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -56,7 +56,6 @@
                                 <i class="fa fa-user" style="font-size: 15px"></i>
                             </a>
                         </li>
-
                     </ul>
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
@@ -70,10 +69,48 @@
         </div>
         <div class="wrapper wrapper-content">
             <div class="container">
-                <div class="m-t-lg col-lg-8 col-lg-offset-2">
+                <div class="">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="ibox-title">
+                            <h1>Enter Name And Address</h1>
+                        </div>
+                        <div class="ibox-content border-bottom">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="product_name">Patients' Name</label>
+                                        <input type="text" id="product_name" name="product_name" value="" placeholder="Patients' Name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="price">Patients' Address</label>
+                                        <input type="text" id="price" name="price" value="Dahanu Road" class="form-control">
+                                    </div>
+                                </div>
+                                <hr class="hr-line-dashed">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="product_name">Doctors' Name</label>
+                                        <input type="text" id="product_name" name="product_name" value="" placeholder="Doctors' Name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="price">Doctors' Address</label>
+                                        <input type="text" id="price" name="price" value="Dahanu Road" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Enter Product Name </h5>
+                            <h1>Enter Product Name </h1>
                         </div>
                         <div class="ibox-content">
                             <p>
@@ -92,7 +129,7 @@
                             </div>
 
                             <div class="form-group">
-                                    <button class="btn btn-sm btn-info" id="btnGet" type="submit" >Proceed </button>
+                                    <button class="btn btn-sm btn-info" id="btnGet" type="submit" >Print Invoice</button>
                             </div>
                         </div>
                     </div>
@@ -156,7 +193,7 @@
                 var div = $("<div/>");
                 div.html(GetDynamicTextBox(""));
                 $("#TextBoxContainer").append(div);
-                $('.chosen-select').chosen({width: "50%"});
+                $('.chosen-select').chosen({width: "40%"});
                 $('.text-primary').focus();
             }
 
@@ -184,7 +221,7 @@
             '<option value="">Select</option>'+
             '<option value="United States">United States</option>'+
             '<option value="United Kingdom">United Kingdom</option>'+
-            '</select> &nbsp;'+'<input type="text" style="width: 10%" value="1">&nbsp;'+'<button type="button" class="btn btn-danger btn-xs remove">Remove</button>'+'<hr class="hr-line-dashed">'
+            '</select> &nbsp;'+'<input type="text" style="width: 10%" placeholder="Qty">&nbsp;'+'<input type="text" placeholder="Price" style="width: 7%" >&nbsp;'+'<button type="button" class="btn btn-danger btn-xs remove">Remove</button>'+'<hr class="hr-line-dashed">'
 
     }
 </script>

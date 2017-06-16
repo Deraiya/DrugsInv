@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shiv Medical | Entry </title>
+    <title>Shiv Medical</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -14,6 +14,8 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
     <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <!-- Input Mask-->
+    <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
 
 
 </head>
@@ -70,7 +72,7 @@
             </nav>
         </div>
         <div class="wrapper wrapper-content">
-            <div class="container">
+            <div class="container" style="width: 100%">
                 <div class="ibox-content m-b-sm border-bottom">
                     <div class="row">
                         <div class="ibox-title" style="border: none">
@@ -78,51 +80,75 @@
                             <hr>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="product_name">Product Name</label>
-                                <input type="text" id="" name="" value="" placeholder=" " class="form-control">
+                                <input type="text" id="" name="" value="" placeholder=" "  autofocus class="form-control">
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="price">Product Company</label>
                                 <input type="text" id="" name="" value="" placeholder="" class="form-control">
                             </div>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-lg-1">
                             <div class="form-group">
                                 <label class="control-label" for="quantity">Quantity</label>
                                 <input type="text" id="" name="" value="" placeholder="" class="form-control">
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-lg-1">
+                            <div class="form-group">
+                                <label class="control-label" for="quantity">Price</label>
+                                <input type="text" id="" name="" value="" placeholder="" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="quantity">Mfg. Date</label>
-                                <input type="text" id="" name="" value="" placeholder="" class="form-control">
+                                <div>
+                                    <input type="text" class="form-control" data-mask="99/99/9999" placeholder="">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="quantity">Exp. Date</label>
-                                <input type="text" id="" name="" value="" placeholder="" class="form-control">
+                                <div>
+                                    <input type="text" class="form-control" data-mask="99/99/9999" placeholder="">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-lg-2">
                             <div class="form-group">
-                                <label class="control-label" for="quantity">Date of Arrival</label>
+                                <label class="control-label" for="quantity">Arrival Date</label>
+                                <div>
+                                    <input type="text" class="form-control" data-mask="99/99/9999" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label class="control-label" for="quantity">Distributor</label>
                                 <input type="text" id="" name="" value="" placeholder="" class="form-control">
                             </div>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-lg-1">
                             <div class="form-group">
                                 <label class="control-label" for="quantity">Batch #</label>
                                 <input type="text" id="" name="" value="" placeholder="" class="form-control">
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-info ">Capture Image</button>
+                            </div>
+                        </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <button type="button" class="btn btn-primary ">Capture Image</button>
+                                <button type="button" class="btn btn-danger ">Submit</button>
                             </div>
                         </div>
 
@@ -147,13 +173,15 @@
                                                 <th>Prod Name</th>
                                                 <th>Prod Company</th>
                                                 <th>Quantity</th>
-                                                <th>Type</th>
+                                                <th>Price</th>
                                                 <th>Mfg. Date</th>
                                                 <th>Exp. Date</th>
                                                 <th>Date Of Arrival</th>
                                                 <th>Distributor</th>
                                                 <th>Batch #</th>
                                                 <th>Image</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
 
                                             </tr>
                                             </thead>
@@ -163,13 +191,114 @@
                                                 <td>Diazepam Tablet</td>
                                                 <td>Valium</td>
                                                 <td>3</td>
-                                                <td>Tablet</td>
+                                                <td>100</td>
                                                 <td>10/11/17</td>
                                                 <td>10/11/18</td>
                                                 <td>10/12/17</td>
                                                 <td>Shivam</td>
                                                 <td>1246</td>
-                                                <td><button type="button" class="btn btn-primary btn-xs">View Image</button></td>
+                                                <td><button type="button" class="btn btn-info btn-xs">View Image</button></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal6">
+                                                        Edit
+                                                    </button>
+                                                    <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title pull-left">Edit Details</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+
+
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="product_name">Product Name</label>
+                                                                                <br>
+                                                                                <input type="text" id="" name="" value="Crcoine" placeholder=" "  autofocus class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="price">Product Company</label>
+                                                                                <br>
+                                                                                <input type="text" id="" name="" value="ABC" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Quantity</label><br>
+                                                                                <input type="text" id="" name="" value="100" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Price</label><br>
+                                                                                <input type="text" id="" name="" value="100" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Mfg. Date</label><br>
+                                                                                <div>
+                                                                                    <input type="text" class="form-control" value="10/10/1090" data-mask="99/99/9999" placeholder="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Exp. Date</label><br>
+                                                                                <div>
+                                                                                    <input type="text" class="form-control"  value="10/10/1090" data-mask="99/99/9999" placeholder="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Arrival Date</label><br>
+                                                                                <div>
+                                                                                    <input type="text" class="form-control" value="10/10/1090" data-mask="99/99/9999" placeholder="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Distributor</label><br>
+                                                                                <input type="text" id="" name="" value="Ramu" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Batch #</label><br>
+                                                                                <input type="text" id="" name="" value="1001" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <button type="button" class="btn btn-info ">Capture Image</button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <button type="button" class="btn btn-danger ">Submit</button>
+                                                                            </div>
+                                                                        </div>
+
+
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><button type="button" class="btn btn-danger btn-xs">Delete</button></td>
                                             </tr>
 
                                             <tr class="">
@@ -177,13 +306,114 @@
                                                 <td>Cevimeline HCl</td>
                                                 <td>Evoxac</td>
                                                 <td>6</td>
-                                                <td>Tablet</td>
+                                                <td>200</td>
                                                 <td>10/11/17</td>
                                                 <td>10/11/18</td>
                                                 <td>10/12/17</td>
                                                 <td>Shivam</td>
                                                 <td>17946</td>
-                                                <td><button type="button" class="btn btn-primary btn-xs">View Image</button></td>
+                                                <td><button type="button" class="btn btn-info btn-xs">View Image</button></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal6">
+                                                        Edit
+                                                    </button>
+                                                    <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title pull-left">Edit Details</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+
+
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="product_name">Product Name</label>
+                                                                                <br>
+                                                                                <input type="text" id="" name="" value="Crcoine" placeholder=" "  autofocus class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="price">Product Company</label>
+                                                                                <br>
+                                                                                <input type="text" id="" name="" value="ABC" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Quantity</label><br>
+                                                                                <input type="text" id="" name="" value="100" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Price</label><br>
+                                                                                <input type="text" id="" name="" value="100" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Mfg. Date</label><br>
+                                                                                <div>
+                                                                                    <input type="text" class="form-control" value="10/10/1090" data-mask="99/99/9999" placeholder="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Exp. Date</label><br>
+                                                                                <div>
+                                                                                    <input type="text" class="form-control"  value="10/10/1090" data-mask="99/99/9999" placeholder="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Arrival Date</label><br>
+                                                                                <div>
+                                                                                    <input type="text" class="form-control" value="10/10/1090" data-mask="99/99/9999" placeholder="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Distributor</label><br>
+                                                                                <input type="text" id="" name="" value="Ramu" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="quantity">Batch #</label><br>
+                                                                                <input type="text" id="" name="" value="1001" placeholder="" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <button type="button" class="btn btn-info ">Capture Image</button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="">
+                                                                            <div class="form-group">
+                                                                                <button type="button" class="btn btn-danger ">Submit</button>
+                                                                            </div>
+                                                                        </div>
+
+
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><button type="button" class="btn btn-danger btn-xs">Delete</button></td>
                                             </tr>
                                             </tbody>
                                             <tfoot>
@@ -192,13 +422,15 @@
                                                 <th>Prod Name</th>
                                                 <th>Prod Company</th>
                                                 <th>Quantity</th>
-                                                <th>Type</th>
+                                                <th>Price</th>
                                                 <th>Mfg. Date</th>
                                                 <th>Exp. Date</th>
                                                 <th>Date Of Arrival</th>
                                                 <th>Distributor</th>
                                                 <th>Batch #</th>
                                                 <th>Image</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -257,6 +489,9 @@
 <script src="js/plugins/chosen/chosen.jquery.js"></script>
 
 <script src="js/plugins/dataTables/datatables.min.js"></script>
+
+<!-- Input Mask-->
+<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
 
 <!-- Page-Level Scripts -->
 <script>
